@@ -1,0 +1,201 @@
+
+/*tamanho-min*/
+@media (min-width:1600px){
+	.menu-lateral,.base-topo .logo {width: 300px;}
+	.base-geral { padding-left: 326px;}
+}
+
+/*1175*/
+@media (max-width:1175px){
+	.base-home figure small{font-size:.75em;}
+}
+	
+/*1140*/
+@media (max-width:1140px){
+	.base-home figure .thumb {
+		 width: 80px;
+		height: 80px;
+		float: none;
+		margin:0 auto;
+	}
+	.base-home figure strong, .base-home figure small {text-align:center;}
+	.base-home .cel8 .caixa, .base-home figure{      min-height: 200px;}
+	.base-topo .logo {
+    padding:12px 50px;
+}
+}
+	
+/*1070*/
+@media (max-width:1070px){
+	.v-desempenho li .tt1 {
+		font-size: .7em;
+	}
+	.v-desempenho li .ico {
+    width: 29px;
+    height: 29px;
+	}
+	.v-desempenho li .tt2 {
+    font-size: 1em;
+	}
+}
+
+/*1050*/
+@media (max-width:1050px){
+	.base-home .detalhes .ico {
+	   
+	}
+	.base-home .detalhes small,.base-home .detalhes h3{text-align:center;display:block;}
+	.base-home .ico.curso { background: url(../img/ico-curso-medio.png) center no-repeat; background-size:100%}
+	.base-home .ico.video { background: url(../img/ico-aula-medio.png) center no-repeat; background-size:100%}
+	.base-home .ico.exercicio {background: url(../img/ico-exercicio-medio.png) center no-repeat; background-size:100%}
+	.desempenho .cel6{width:100%;margin-left:0;margin-bottom:10px;}
+	.menu-lateral{width:24.28571428571429%;}
+	.base-topo .logo{width:24.28571428571429%;}
+	.base-geral { padding-left: 26%;}
+	}
+	
+	
+	
+/*992*/
+@media (max-width:992px){
+	.cursos .caixa .del-curso .btn {
+		font-size: 1.2em;
+	}
+	.cursos .caixa p {
+		font-size: 1.1em;
+		min-height: auto;
+		padding-bottom: 18px;
+	}
+	.cursos .caixa small {font-size: 1rem;}
+	.v-desempenho li .ico {
+		width: 40px;
+		height: 40px;
+	}
+	.v-desempenho li .tt1 {font-size: .9em;}
+	.v-desempenho li .tt2 {font-size: 1.3em;}
+	.menu-sidebar .scroll-lista {height: 320px;}
+}
+	
+/*980*/
+@media (max-width:980px){
+	.menu-lateral figure{display:none;}
+}
+	
+/*820*/
+@media (max-width:820px){
+	.base-topo .logo {  width: 34.285714%;}
+	.menu-lateral,.base-topo .menu-topo{display:none;}
+	.base-geral { padding-left:20px;}
+	.base-topo{position:relative;    height: 57px;}
+	.base-topo .menu-m{position:absolute;left:10px;top:18px; display:block;z-index: 1;}
+	.base-topo .menu-grade{position:absolute;right:10px;top:18px; display:block}
+	.base-topo .logo {    
+		margin: 0 auto;
+		display: block;
+		float: none;
+	}
+	.menu-lateral{
+		width:100%;
+		z-index:1;
+		bottom: unset;
+		height: auto;
+	}
+	.menu-topo{
+		display:block;
+		position:absolute;
+		top:52px;
+		width:50%;
+		z-index:1;
+		bottom: unset;
+		height: auto;
+		z-index:2;
+		background:#2c7fb1;
+		right:0;
+		height:400px;
+		overflow-y:scroll;
+		padding:20px 20px;
+	}
+	.base-topo .menu-topo .sub ul{
+		position: inherit;
+		left: 0;
+		top: 0;
+		width: auto;
+		border: solid 1px #DDD;
+		background: #009fff;
+		z-index: 1;
+		display:block;
+		margin-bottom:10px;
+
+	}
+	.base-topo .menu-topo li {
+		display: block;
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.base-topo .menu-topo .thumb { width: 45px; height: 45px;float:left;}
+	.base-topo .menu-topo .sub.user ul li b {color: #fff;}
+	.base-topo .menu-topo .sub.user ul li a {padding: 10px 10px; color: #7ccdfd;}
+	.base-topo .menu-topo .sub.notif ul,
+	.base-topo .menu-topo .sub.user ul{
+		background:none;
+		left: unset;
+		right:-12px;
+		width:225px;
+		float:left;
+	}
+	.base-topo .menu-topo li .msg {
+		left: 13px;
+		right: unset;
+	}
+	.base-topo .menu-topo .sub ul li{display:block}
+}
+
+/*700px*/
+@media (max-width:768px){
+	.duvidas ul {
+    padding: 20px 0;
+}
+}
+
+/*700px*/
+@media (max-width:700px){
+.base-topo .logo {
+    width: 46.285714%;
+    position: inherit;
+    padding: 0;
+    height: 40px;
+    background: url(../img/logo.png) center no-repeat;
+    margin-top: -1px;
+}
+.titulo .case{display:none;}
+}
+
+/*600px*/
+@media (max-width:600px){
+.lista table thead th:nth-of-type(2),
+.lista table tbody td:nth-of-type(2),
+.lista table thead th:nth-of-type(5),
+.lista table tbody td:nth-of-type(5)
+{display:none}
+}
+
+/*460px*/
+@media (max-width:460px){
+.base-topo .menu-topo { width: 100%;}
+.base-topo .logo {  margin-top: -2px;}
+}
+
+/*390PX*/
+@media (max-width:390px){
+.base-topo .logo {
+    width: 77.285714%;
+}
+.base-geral {
+    padding: 15px;
+}
+.duvidas ul {
+    padding: 0px;
+}
+}
+
+
