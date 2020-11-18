@@ -51,15 +51,15 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr><td><a href="curso.html">Curso de Java</a></td></tr>                   
-									<tr><td><a href="curso.html">Curso de lógica de programação</a></td></tr> 
-									<tr><td><a href="curso.html">Curso de frontend</a></td></tr> 
-									<tr><td><a href="curso.html">Curso de android</a></td></tr> 
-									<tr><td><a href="curso.html">Curso de PHP</a></td></tr> 
-									<tr><td><a href="curso.html">Curso de Java</a></td></tr> 
-									<tr><td><a href="curso.html">Curso de lógica de programação</a></td></tr> 
-									<tr><td><a href="curso.html">Curso de frontend</a></td></tr> 
-									<tr><td><a href="curso.html">Curso de android</a></td>		</tr> 		
+									<tr><td><a href="<?php echo URL_BASE . 'curso' ?>">Curso de Java</a></td></tr>                   
+									<tr><td><a href="<?php echo URL_BASE . 'curso' ?>">Curso de lógica de programação</a></td></tr> 
+									<tr><td><a href="<?php echo URL_BASE . 'curso' ?>">Curso de frontend</a></td></tr> 
+									<tr><td><a href="<?php echo URL_BASE . 'curso' ?>">Curso de android</a></td></tr> 
+									<tr><td><a href="<?php echo URL_BASE . 'curso' ?>">Curso de PHP</a></td></tr> 
+									<tr><td><a href="<?php echo URL_BASE . 'curso' ?>">Curso de Java</a></td></tr> 
+									<tr><td><a href="<?php echo URL_BASE . 'curso' ?>">Curso de lógica de programação</a></td></tr> 
+									<tr><td><a href="<?php echo URL_BASE . 'curso' ?>">Curso de frontend</a></td></tr> 
+									<tr><td><a href="<?php echo URL_BASE . 'curso' ?>">Curso de android</a></td>		</tr> 		
 								</tbody>
 							</table>
 							</div>
