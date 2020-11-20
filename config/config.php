@@ -1,7 +1,7 @@
 <?php
 
 define("SERVIDOR", "localhost");
-define("BANCO", "portoseguro_paginacao");
+define("BANCO", "plataforma_ead");
 define("USUARIO", "root");
 define("SENHA", "");
 

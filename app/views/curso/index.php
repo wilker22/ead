@@ -1,4 +1,4 @@
-
+<?php var_dump($aulas)?>
 		<div class="caixa">
 			<h2 class="titulo"><span class="case"><i class="ico duvida"></i>Curso</span> Curso de Front-end</h2>
 		</div>
@@ -9,13 +9,13 @@
 						<div class="caixa">
 							<div class="base-caixa-curso rows">
 								<div class="col-4">
-									<div class="thumb"><img src="<?php echo URL_BASE ?>assets/img/frontend.jpg"></div>
+									<div class="thumb"><img src="<?php echo URL_BASE . "assets/img/" . $curso['imagem']?>"></div>
 								</div>
 								<div class="col-8">
-									<span class="titulo">FORMAÇÃO FRONT-END COMPLETO</span>
+									<span class="titulo"><?php echo $curso["curso"] ?></span>
 									<ul>
 										<li><i class="ico data"></i><small>DATA DE INÍCIO:</small> <span>27/06/2017</span></li>
-										<li><i class="ico hora"></i><small>Duração:</small> <span>05h00min</span></li>
+										<li><i class="ico hora"></i><small>Duração:</small> <span><?php echo $curso["duracao"] ?></span></li>
 										<li><i class="ico qtd"></i><small>Quantidade:</small> <span>27 Aulas</span></li>
 									</ul>
 									<div class="progress">
@@ -42,69 +42,16 @@
 									</tr>
 								</thead>
 								<tbody>						 
-									<tr>
-										<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i>Apresentação do Curso de HTML</a></td>
-										<td align="left"><i class="ico iduracao"></i>06min14s</td>
-										<td align="left"><i class="ico idata"></i>08/01/2018</td>
-										<td align="left"><i class="ico iassistido"></i>Sim</td>
-										<td align="left"><i class="ico iaula"></i>Aula</td>
-									</tr>					 
-									<tr>
-										<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i>Apresentação do Curso de HTML</a></td>
-										<td align="left"><i class="ico iduracao"></i>06min14s</td>
-										<td align="left"><i class="ico idata"></i>08/01/2018</td>
-										<td align="left"><i class="ico iassistido"></i>Sim</td>
-										<td align="left"><i class="ico iaula"></i>Aula</td>
-									</tr>				 
-									<tr>
-										<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i>Apresentação do Curso de HTML</a></td>
-										<td align="left"><i class="ico iduracao"></i>06min14s</td>
-										<td align="left"><i class="ico idata"></i>08/01/2018</td>
-										<td align="left"><i class="ico iassistido"></i>Sim</td>
-										<td align="left"><i class="ico iaula"></i>Aula</td>
-									</tr>			 
-									<tr>
-										<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i>Apresentação do Curso de HTML</a></td>
-										<td align="left"><i class="ico iduracao"></i>06min14s</td>
-										<td align="left"><i class="ico idata"></i>08/01/2018</td>
-										<td align="left"><i class="ico inaoassistido"></i>Sim</td>
-										<td align="left"><i class="ico iaula"></i>Aula</td>
-									</tr>			 
-									<tr>
-										<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i>Apresentação do Curso de HTML</a></td>
-										<td align="left"><i class="ico iduracao"></i>06min14s</td>
-										<td align="left"><i class="ico idata"></i>08/01/2018</td>
-										<td align="left"><i class="ico inaoassistido"></i>Sim</td>
-										<td align="left"><i class="ico iaula"></i>Aula</td>
-									</tr>			 
-									<tr>
-										<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i>Apresentação do Curso de HTML</a></td>
-										<td align="left"><i class="ico iduracao"></i>06min14s</td>
-										<td align="left"><i class="ico idata"></i>08/01/2018</td>
-										<td align="left"><i class="ico inaoassistido"></i>Sim</td>
-										<td align="left"><i class="ico iaula"></i>Aula</td>
-									</tr>			 
-									<tr>
-										<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i>Apresentação do Curso de HTML</a></td>
-										<td align="left"><i class="ico iduracao"></i>06min14s</td>
-										<td align="left"><i class="ico idata"></i>08/01/2018</td>
-										<td align="left"><i class="ico inaoassistido"></i>Sim</td>
-										<td align="left"><i class="ico iaula"></i>Aula</td>
-									</tr>			 
-									<tr>
-										<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i>Apresentação do Curso de HTML</a></td>
-										<td align="left"><i class="ico iduracao"></i>06min14s</td>
-										<td align="left"><i class="ico idata"></i>08/01/2018</td>
-										<td align="left"><i class="ico inaoassistido"></i>Sim</td>
-										<td align="left"><i class="ico iaula"></i>Aula</td>
-									</tr>			 
-									<tr>
-										<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i>Apresentação do Curso de HTML</a></td>
-										<td align="left"><i class="ico iduracao"></i>06min14s</td>
-										<td align="left"><i class="ico idata"></i>08/01/2018</td>
-										<td align="left"><i class="ico inaoassistido"></i>Sim</td>
-										<td align="left"><i class="ico iaula"></i>Aula</td>
-									</tr>							
+									<?php foreach ($aulas as $aula) { ?>
+											<tr>
+												<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i><?php echo $aula["aula"]?></a></td>
+												<td align="left"><i class="ico iduracao"></i><?php echo $aula["duracao_aula"]?></td>
+												<td align="left"><i class="ico idata"></i>08/01/2018</td>
+												<td align="left"><i class="ico iassistido"></i>Sim</td>
+												<td align="left"><i class="ico iaula"></i>Aula</td>
+											</tr>
+									<?php } ?>					 
+																
 								</tbody>
 							</table>
 						</div>
