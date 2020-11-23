@@ -44,7 +44,7 @@
 								<tbody>						 
 									<?php foreach ($aulas as $aula) { ?>
 											<tr>
-												<td align="left"><a href="<?php echo URL_BASE . 'aula' ?>"><i class="ico ititulo"></i><?php echo $aula["aula"]?></a></td>
+												<td align="left"><a href="<?php echo URL_BASE . 'aula/assistir/' . $aula['id_aula'] ?>"><i class="ico ititulo"></i><?php echo $aula["aula"]?></a></td>
 												<td align="left"><i class="ico iduracao"></i><?php echo $aula["duracao_aula"]?></td>
 												<td align="left"><i class="ico idata"></i>08/01/2018</td>
 												<td align="left"><i class="ico iassistido"></i>Sim</td>

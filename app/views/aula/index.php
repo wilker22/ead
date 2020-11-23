@@ -5,10 +5,10 @@
 			<div class="rows base-cursos ver_videos py-3">
 				<div class="col-9 d-flex">
 						<div class="caixa">
-							<span class="titulo2">Apresentação do Curso de HTML/1-14314</span>
+							<span class="titulo2"><?php echo $aula_atual['aula'] ?></span>
 							<div class="caixa-video">
 								<div class="caixa-embed">
-									<iframe src="https://www.youtube.com/embed/13QshaUKVW4?ecver=2" class="embed-item" width="655" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+									<iframe src="https://www.youtube.com/embed/<?php echo $aula_atual['embed_youtube'] ?>" class="embed-item" width="655" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 								</div>
 								<div class="controles">
 									<a href="" class="btn anterior">Anterior</a>
@@ -24,46 +24,14 @@
 						<span class="titulo2">Lista de aulas</span>
 						<div class="scroll-lista">
 							<ul>				
-								<li class="marcado">
-									<a href="">
-										Apresentação do Curso de HTML	
-									</a>
-								</li>				
-								<li class="marcado">
-									<a href="">
-										Aula 02 - Conceitos iniciais								
-									</a>
-								</li>		
-								<li class="marcado">
-									<a href="">
-										Aula 03 - Conceituando HTML								
-									</a>
-								</li>		
-								<li class="naomarcado">
-									<a href="">
-										Aula 04 - Criando a primeira página	
-									</a>
-								</li>	
-								<li class="naomarcado">
-									<a href="">
-										Aula 04 - Criando a primeira página	
-									</a>
-								</li>	
-								<li class="naomarcado">
-									<a href="">
-										Aula 04 - Criando a primeira página	
-									</a>
-								</li>	
-								<li class="naomarcado">
-									<a href="">
-										Aula 04 - Criando a primeira página	
-									</a>
-								</li>	
-								<li class="naomarcado">
-									<a href="">
-										Aula 04 - Criando a primeira página	
-									</a>
-								</li>
+								<?php foreach($aulas as $aula) { ?>
+										
+									<li class="naomarcado">
+										<a href="">
+											<?php echo $aula['aula'] ?>	
+										</a>
+									</li>
+								<?php } ?>
 							</ul>
 						</div>
 					</div>	
