@@ -8,6 +8,16 @@ use app\core\Model;
 class Aula_assistida extends Model
 {
     
+    public function getJaAssistiu($id_aula, $id_cliente)
+    {
+        $sql = "SELECT * FROM aula_assistida WHERE id_aula = :id_aula AND id_cliente = :id_cliente";
+        $qry = $this->db->prepare($sql);
+        $qry->bindValue(":id_aula", $id_aula);
+        $qry->bindValue(":id_cliente", $id_cliente);
+        $qry->execute();
+        return $qry->fetch(\PDO::FETCH_ASSOC);
+    }
+    
     public function marcarComoAssistido($id_aula, $id_cliente, $id_curso)
     {
         $sql = "INSERT INTO aula_assistida SET

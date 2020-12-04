@@ -1,4 +1,4 @@
-<?php var_dump($aulas)?>
+
 		<div class="caixa">
 			<h2 class="titulo"><span class="case"><i class="ico duvida"></i>Curso</span> Curso de Front-end</h2>
 		</div>
@@ -42,12 +42,19 @@
 									</tr>
 								</thead>
 								<tbody>						 
-									<?php foreach ($aulas as $aula) { ?>
+
+									<?php
+									 
+										foreach ($aulas as $aula) { 
+											
+											$assistido = ($aula['assistido']) ? "iassistido" : "inaoassistido";
+											$simnao = ($aula['assistido']) ? "Sim" : "Não";
+									?>
 											<tr>
 												<td align="left"><a href="<?php echo URL_BASE . 'aula/assistir/' . $aula['id_aula'] ?>"><i class="ico ititulo"></i><?php echo $aula["aula"]?></a></td>
 												<td align="left"><i class="ico iduracao"></i><?php echo $aula["duracao_aula"]?></td>
-												<td align="left"><i class="ico idata"></i>08/01/2018</td>
-												<td align="left"><i class="ico iassistido"></i>Sim</td>
+												<td align="left"><i class="ico idata"></i><?php echo $aula["data"]?></td>
+												<td align="left"><i class="ico <php echo $assistido ?>"></i><?php echo $simnao ?></td>
 												<td align="left"><i class="ico iaula"></i>Aula</td>
 											</tr>
 									<?php } ?>					 

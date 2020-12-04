@@ -20,7 +20,11 @@ class AulaController extends Controller{
 
       $aula = $objAula->getAula($id_aula);
 
-      $objAula_assistida->marcarComoAssistido($id_aula, $id_cliente, $aula['id_curso']);
+      if(!$objAula_assistida->getJaAssistiu($id_aula, $id_cliente)){
+         $objAula_assistida->marcarComoAssistido($id_aula, $id_cliente, $aula['id_curso']);
+      }
+      
+      
       $dados['aula_atual'] = $aula;
       $dados['aulas'] = $objAula->listaPorCurso($aula['id_curso']);
       $dados['view'] = 'aula/index';
