@@ -3,7 +3,7 @@
 			<figure>
 					<div class="thumb"><img src="<?php echo URL_BASE ?>assets/img/foto01.png"></div>
 					<figcaption>
-						<strong>Manoel jailton</strong>
+						<strong><?php echo $_SESSION[SESSION_LOGIN]["cliente"] ?></strong>
 						<small>Em andamento</small>
 					</figcaption>
 			</figure>
