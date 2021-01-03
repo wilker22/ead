@@ -2,6 +2,7 @@
 namespace app\controllers;
 
 use app\core\Controller;
+use app\models\Comentario;
 use app\models\Login;
 
 class ComentarioController extends Controller{
@@ -20,4 +21,20 @@ class ComentarioController extends Controller{
       $dados["view"] = "comentario/index";
       $this->load('template', $dados);
    } 
+
+   public function inserir()
+   {
+      $objComentario = new Comentario();
+
+      $comentario = new \stdClass();
+      $comentario->id_aula       = $_POST["id_aula"];
+      $comentario->id_cliente    = $this->id_cliente;
+      $comentario->id_curso      = $_POST["id_curso"];
+      $comentario->comentario    = $_POST["comentario"];
+
+      $objComentario->inserir($comentario);
+
+      header("location:" . URL_BASE .  "aula/assistir/" . $comentario->id_aula);
+      
+   }
 }

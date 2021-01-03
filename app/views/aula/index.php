@@ -55,15 +55,20 @@
 						</div>
 						</div>
 					<?php } ?>
-					<div class="base-comentario">
-						<div class="caixa">	
-							<span class="titulo2">Comentários </span>					
 
-							<textarea rows="10" placeholder="Deixe seu comentrio"></textarea>	
-							<input type="submit" name="" value="Comentário" class="btn">
-											
+					<form action="<?php echo URL_BASE . "comentario/inserir"?>" method="post">
+						<div class="base-comentario">
+							<div class="caixa">	
+								<span class="titulo2">Comentários </span>					
+
+								<textarea name="comentario" rows="10" placeholder="Deixe seu comentrio"></textarea>	
+								<input type="hidden" name="id_aula" value="<?php echo $aula_atual->id_aula?>">
+								<input type="hidden" name="id_curso" value="<?php echo $aula_atual->id_curso?>">
+								<input type="submit" name="" value="Inserir Comentário" class="btn">
+												
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 				<div class="col-3">	
 					<div class="v-desempenho">						
