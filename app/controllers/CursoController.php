@@ -22,7 +22,7 @@ class CursoController extends Controller{
            
       $dados['view'] = 'curso/index';
       $this->load('template', $dados);
-   } 
+   }  
 
    public function detalhe ($id_curso)
    {

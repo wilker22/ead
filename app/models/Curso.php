@@ -13,6 +13,16 @@ class Curso extends Model
         $qry = $this->db->prepare($sql);
         $qry->bindValue(":id_curso", $id_curso);
         $qry->execute();
-        return $qry->fetch(\PDO::FETCH_ASSOC);
+        return $qry->fetch(\PDO::FETCH_OBJ);
+    }
+
+
+    public function qtdeAulaPorCurso($id_curso)
+    {
+        $sql = "SELECT count(*) FROM aula WHERE id_curso = :id_curso";
+        $qry = $this->db->prepare($sql);
+        $qry->bindValue(":id_curso", $id_curso);
+        $qry->execute();
+        return $qry->fetch(\PDO::FETCH_OBJ);
     }
 }

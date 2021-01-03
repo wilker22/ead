@@ -15,7 +15,7 @@ class Aula_assistida extends Model
         $qry->bindValue(":id_aula", $id_aula);
         $qry->bindValue(":id_cliente", $id_cliente);
         $qry->execute();
-        return $qry->fetch(\PDO::FETCH_ASSOC);
+        return $qry->fetch(\PDO::FETCH_OBJ);
     }
     
     public function marcarComoAssistido($id_aula, $id_cliente, $id_curso)
@@ -39,6 +39,16 @@ class Aula_assistida extends Model
         return $this->db->lastInsertId();
     }
 
+    public function qtdeAssistidaPorCliente($id_curso, $id_cliente)
+    {
+       $sql = "SELECT count(*) as qtde FROM aula_assistida where id_curso =  :id_curso AND id_cliente = :id_cliente";
+       $qry = $this->db->prepare($sql);
+       $qry->bindValue(":id_curso", $id_curso);
+       $qry->bindValue(":id_cliente", $id_cliente);
+       $qry->execute();
+       return $qry->fetch(\PDO::FETCH_OBJ);
+    }
+
     public function listaAulasAssistidas($id_curso, $id_cliente)
    {
       $objAula = new Aula();
@@ -49,11 +59,11 @@ class Aula_assistida extends Model
 
       if($aulas){
          foreach($aulas as $aula){
-            $assistiu = $objAula_assistida->getJaAssistiu($aula['id_aula'], $id_cliente);
+            $assistiu = $objAula_assistida->getJaAssistiu($aula->id_aula, $id_cliente);
    
             if($assistiu){
-               $data = $assistiu['data_assistida'];
-               $hora = $assistiu['hora_assistida'];
+               $data = $assistiu->data_assistida;
+               $hora = $assistiu->hora_assistida;
                $assistido =  true;
             }else{
                $data = "0000-00-00";
@@ -62,13 +72,13 @@ class Aula_assistida extends Model
             }
    
             $lista [] = [
-               "id_aula"         => $aula['id_aula'],
-               "id_curso"         => $aula['id_curso'],
-               "aula"            => $aula['aula'],
-               "duracao_aula"    => $aula['duracao_aula'],
-               "slug_aula"       => $aula['slug_aula'],
-               "ativo_aula"      => $aula['ativo_aula'],
-               "embed_youtube"   => $aula['embed_youtube'],
+               "id_aula"         => $aula->id_aula,
+               "id_curso"        => $aula->id_curso,
+               "aula"            => $aula->aula,
+               "duracao_aula"    => $aula->duracao_aula,
+               "slug_aula"       => $aula->slug_aula,
+               "ativo_aula"      => $aula->ativo_aula,
+               "embed_youtube"   => $aula->embed_youtube,
                "data"            => $data,
                "hora"            => $hora,
                "assistido"       => $assistido

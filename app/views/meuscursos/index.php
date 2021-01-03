@@ -8,10 +8,10 @@
                                         <div class="caixa">
                                                 <img src="<?php echo URL_BASE . "assets/img/". $curso["imagem"] ?>">
                                                 <div class="del-curso">
-                                                        <p><?php echo $curso["curso"] ?></p>
-                                                        <small>Desempenho <b>50%</b></small>
-                                                        <progress value="4" max="7"></progress>
-                                                        <a href="<?php echo URL_BASE . "curso/detalhe/" . $curso['id_curso']  ?>" class="btn">Ir para o curso</a>
+                                                        <p><?php echo $curso->curso ?></p>
+                                                        <small>Desempenho <b><?php echo number_format(($curso->qtde_assistida / $curso->qtde_aula) * 100,2) ?>%</b></small>
+                                                        <progress value="<?php $curso->qtde_assistida?>" max="<?php $curso->qtde_aula?>"></progress>
+                                                        <a href="<?php echo URL_BASE . "curso/detalhe/" . $curso->id_curso  ?>" class="btn">Ir para o curso</a>
                                                 </div>
                                         </div>
                                 </div>

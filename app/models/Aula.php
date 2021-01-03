@@ -14,7 +14,7 @@ class Aula extends Model
         $qry = $this->db->prepare($sql);
         $qry->bindValue(":id_aula", $id_aula);
         $qry->execute();
-        return $qry->fetch(\PDO::FETCH_ASSOC);
+        return $qry->fetch(\PDO::FETCH_OBJ);
     }
 
     public function listaPorCurso($id_curso)
@@ -23,6 +23,6 @@ class Aula extends Model
         $qry = $this->db->prepare($sql);
         $qry->bindValue(":id_curso", $id_curso);
         $qry->execute();
-        return $qry->fetchAll(\PDO::FETCH_ASSOC);
+        return $qry->fetchAll(\PDO::FETCH_OBJ);
     }
 }

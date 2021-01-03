@@ -15,12 +15,12 @@ class Login extends Model
         $qry->bindValue(":email", $email);
         $qry->bindValue(":senha", $senha);
         $qry->execute();
-        return $qry->fetch(\PDO::FETCH_ASSOC);
+        return $qry->fetch(\PDO::FETCH_OBJ);
     }
 
     public function retornaIdCliente()
     {
-        $id_cliente = isset($_SESSION[SESSION_LOGIN]) ? $_SESSION[SESSION_LOGIN]["id_cliente"] : NULL;
+        $id_cliente = isset($_SESSION[SESSION_LOGIN]) ? $_SESSION[SESSION_LOGIN]->id_cliente : NULL;
 
         return $id_cliente;
     }

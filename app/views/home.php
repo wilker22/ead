@@ -52,7 +52,7 @@
 								</thead>
 								<tbody>
                                                                         <?php foreach($lista_cursos as $curso) { ?>
-                                                                                <tr><td><a href="<?php echo URL_BASE . 'curso' ?>"><?php echo $curso["curso"] ?></a></td></tr>                   
+                                                                                <tr><td><a href="<?php echo URL_BASE . 'curso' ?>"><?php echo $curso->curso ?></a></td></tr>                   
                                                                         <?php } ?>
 									
 								</tbody>

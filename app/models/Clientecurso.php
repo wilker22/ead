@@ -16,6 +16,6 @@ class Clientecurso extends Model
         $qry = $this->db->prepare($sql);
         $qry->bindValue(":id_cliente", $id_cliente);
         $qry->execute();
-        return $qry->fetchAll(\PDO::FETCH_ASSOC);
+        return $qry->fetchAll(\PDO::FETCH_OBJ);
     }
 }
