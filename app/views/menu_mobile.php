@@ -15,9 +15,9 @@
 				</li>
 				<li class="sub user"><a href="" class="thumb"><img src="<?php echo URL_BASE ?>assets/img/foto01.png"></a>
 					<ul>
-						<li><b><?php echo $_SESSION[SESSION_LOGIN]["cliente"]?></b><small><a href="<?php echo URL_BASE . "login/logoff" ?>">Sair</a></small></li>
+						<li><b><?php echo $_SESSION[SESSION_LOGIN]->cliente ?></b><small><a href="<?php echo URL_BASE . "login/logoff" ?>">Sair</a></small></li>
 					</ul>
 				</li>
 			</ul>
 			</div>
-		</div>
+		</div>>

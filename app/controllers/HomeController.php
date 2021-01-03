@@ -31,7 +31,7 @@ class HomeController extends Controller{
       //echo "<pre>";
        //  print_r($dados['lista_cursos']);
       //exit;
-      $dados['view']          = 'home';
+      $dados['view'] = 'home';
       
       $this->load('template', $dados);
    } 

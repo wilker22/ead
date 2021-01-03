@@ -5,10 +5,10 @@
 			<div class="rows base-cursos ver_videos py-3">
 				<div class="col-9 d-flex">
 						<div class="caixa">
-							<span class="titulo2"><?php echo $aula_atual['aula'] ?></span>
+							<span class="titulo2"><?php echo $aula_atual->aula ?></span>
 							<div class="caixa-video">
 								<div class="caixa-embed">
-									<iframe src="https://www.youtube.com/embed/<?php echo $aula_atual['embed_youtube'] ?>" class="embed-item" width="655" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+									<iframe src="https://www.youtube.com/embed/<?php echo $aula_atual->embed_youtube ?>" class="embed-item" width="655" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 								</div>
 								<div class="controles">
 									<a href="" class="btn anterior">Anterior</a>
@@ -26,13 +26,12 @@
 							<ul>				
 								<?php 
 									foreach($aulas as $aula) { 
-									
-										$assistido = ($aula['assistido']) ? "marcado" : "naomarcado" 
+										$assistido = ($aula->assistido) ? "marcado" : "naomarcado" 
 								?>
 										
 									<li class="<?php echo $assistido ?>">
-										<a href="<?php echo URL_BASE . "aula/assistir/" . $aula['id_aula'] ?>">
-											<?php echo $aula['aula'] ?>	
+										<a href="<?php echo URL_BASE . "aula/assistir/" . $aula->id_aula ?>">
+											<?php echo $aula->aula ?>	
 										</a>
 									</li>
 								<?php } ?>
@@ -44,16 +43,18 @@
 			</div>
 			<div class="rows base-cursos ver_videos pb-3">
 				<div class="col-9 mb-3">
-					<div class="v-downloads">
-					<div class="caixa">
-						<span class="titulo2">ARQUIVOS DISPONÍVEÍS PARA DOWNLOADS</span>						
-							<ul>
-								<li><a href="" class="icon" target="_blank">Imagens para desenvolvimento do site</a></li>	
-								<li><a href="" class="icon" target="_blank">Imagens para desenvolvimento do site</a></li>		
-							</ul>
-					</div>
-				</div>
-				
+					<?php if($downloads){ ?>
+						<div class="v-downloads">
+						<div class="caixa">
+							<span class="titulo2">ARQUIVOS DISPONÍVEÍS PARA DOWNLOADS</span>						
+								<ul>
+									<?php foreach($downloads as $download) {?>
+										<li><a href="<?php echo URL_BASE . "download/" . $download->path ?>	" class="icon" target="_blank"><?php echo $download->titulo_download ?></a></li>	
+									<?php } ?>
+								</ul>
+						</div>
+						</div>
+					<?php } ?>
 					<div class="base-comentario">
 						<div class="caixa">	
 							<span class="titulo2">Comentários </span>					

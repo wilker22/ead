@@ -30,9 +30,11 @@ class CursoController extends Controller{
       $objAula = new Aula();
       $objAulaAssistida = new Aula_assistida();
             
-      $dados["curso"] = $objCurso->getCurso($id_curso);
-      $dados["aulas"] = $objAulaAssistida->listaAulasAssistidas($id_curso, $this->id_cliente);
-      $dados["view"] = "curso/index";
+      $dados["curso"]            = $objCurso->getCurso($id_curso);
+      $dados["qtde_assistida"]   = $objAulaAssistida->qtdeAssistidaPorCliente($id_curso, $this->id_cliente);
+      $dados["aulas"]            = $objAulaAssistida->listaAulasAssistidas($id_curso, $this->id_cliente);
+      $dados["qtde_aula"]        = count($dados["aulas"]);
+      $dados["view"]             = "curso/index";
       $this->load("template", $dados);
    }
 

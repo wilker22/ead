@@ -6,7 +6,7 @@
                         <?php foreach($lista_cursos as $curso) { ?>
                                 <div class="col-3">
                                         <div class="caixa">
-                                                <img src="<?php echo URL_BASE . "assets/img/". $curso["imagem"] ?>">
+                                                <img src="<?php echo URL_BASE . "assets/img/". $curso->imagem ?>">
                                                 <div class="del-curso">
                                                         <p><?php echo $curso->curso ?></p>
                                                         <small>Desempenho <b><?php echo number_format(($curso->qtde_assistida / $curso->qtde_aula) * 100,2) ?>%</b></small>

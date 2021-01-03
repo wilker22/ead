@@ -5,6 +5,7 @@ use app\core\Controller;
 use app\models\Aula;
 use app\models\Aula_assistida;
 use app\models\Login;
+use app\models\Download;
 
 class AulaController extends Controller{
     
@@ -27,16 +28,18 @@ class AulaController extends Controller{
    {
       $objAula = new Aula();
       $objAula_assistida = new Aula_assistida();
+      $objDownload = new Download();
 
       $aula = $objAula->getAula($id_aula);
 
       if(!$objAula_assistida->getJaAssistiu($id_aula, $this->id_cliente)){
-         $objAula_assistida->marcarComoAssistido($id_aula, $this->id_cliente, $aula['id_curso']);
+         $objAula_assistida->marcarComoAssistido($id_aula, $this->id_cliente, $aula->id_curso);
       }
       
       
       $dados['aula_atual'] = $aula;
-      $dados['aulas'] = $objAula_assistida->listaAulasAssistidas($aula['id_curso'], $this->id_cliente);
+      $dados['aulas'] = $objAula_assistida->listaAulasAssistidas($aula->id_curso, $this->id_cliente);
+      $dados['downloads'] = $objDownload->lista($aula->id_curso);
       $dados['view'] = 'aula/index';
 
       $this->load('template', $dados);

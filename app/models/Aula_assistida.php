@@ -70,8 +70,14 @@ class Aula_assistida extends Model
                $hora = "00:00:00";
                $assistido =  false;
             }
-   
-            $lista [] = [
+            
+            $aula->data = $data;
+            $aula->hora = $hora;
+            $aula->assistida = $assistido;
+
+            $lista[] = $aula;
+
+           /* $lista [] = (object) [
                "id_aula"         => $aula->id_aula,
                "id_curso"        => $aula->id_curso,
                "aula"            => $aula->aula,
@@ -82,7 +88,7 @@ class Aula_assistida extends Model
                "data"            => $data,
                "hora"            => $hora,
                "assistido"       => $assistido
-            ];
+            ];*/
          }
       }
       return $lista;

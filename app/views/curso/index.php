@@ -9,18 +9,18 @@
 						<div class="caixa">
 							<div class="base-caixa-curso rows">
 								<div class="col-4">
-									<div class="thumb"><img src="<?php echo URL_BASE . "assets/img/" . $curso['imagem']?>"></div>
+									<div class="thumb"><img src="<?php echo URL_BASE . "assets/img/" . $curso->imagem ?>"></div>
 								</div>
 								<div class="col-8">
-									<span class="titulo"><?php echo $curso["curso"] ?></span>
+									<span class="titulo"><?php echo $curso->curso ?></span>
 									<ul>
 										<li><i class="ico data"></i><small>DATA DE INÍCIO:</small> <span>27/06/2017</span></li>
-										<li><i class="ico hora"></i><small>Duração:</small> <span><?php echo $curso["duracao"] ?></span></li>
-										<li><i class="ico qtd"></i><small>Quantidade:</small> <span>27 Aulas</span></li>
+										<li><i class="ico hora"></i><small>Duração:</small> <span><?php echo $curso->duracao ?></span></li>
+										<li><i class="ico qtd"></i><small>Quantidade:</small> <span><?php echo $qtde_aulas ?> Aulas</span></li>
 									</ul>
 									<div class="progress">
-										<small>Nível de progressão deste curso <b>50%</b></small>
-										<progress value="50" max="100"></progress>
+										<small>Nível de progressão deste curso <b><?php echo number_format(($qtde_assistida->qtde / $qtde_aula)*100,2)?>%</b></small>
+										<progress value="<?php $qtde_assistida->qtde ?>" max="<?php $qtde_aula ?>"></progress>
 									</div>
 								</div>	
 							</div>
@@ -47,13 +47,13 @@
 									 
 										foreach ($aulas as $aula) { 
 											
-											$assistido = ($aula['assistido']) ? "iassistido" : "inaoassistido";
-											$simnao = ($aula['assistido']) ? "Sim" : "Não";
+											$assistido = ($aula->assistido) ? "iassistido" : "inaoassistido";
+											$simnao = ($aula->assistido) ? "Sim" : "Não";
 									?>
 											<tr>
-												<td align="left"><a href="<?php echo URL_BASE . 'aula/assistir/' . $aula['id_aula'] ?>"><i class="ico ititulo"></i><?php echo $aula["aula"]?></a></td>
-												<td align="left"><i class="ico iduracao"></i><?php echo $aula["duracao_aula"]?></td>
-												<td align="left"><i class="ico idata"></i><?php echo $aula["data"]?></td>
+												<td align="left"><a href="<?php echo URL_BASE . 'aula/assistir/' . $aula->id_aula ?>"><i class="ico ititulo"></i><?php echo $aula->aula ?></a></td>
+												<td align="left"><i class="ico iduracao"></i><?php echo $aula->duracao_aula?></td>
+												<td align="left"><i class="ico idata"></i><?php echo $aula->data?></td>
 												<td align="left"><i class="ico <php echo $assistido ?>"></i><?php echo $simnao ?></td>
 												<td align="left"><i class="ico iaula"></i>Aula</td>
 											</tr>
@@ -79,18 +79,18 @@
 							<li>
 								<i class="ico horas"></i>
 								<span class="tt1">Duração</span>
-								<span class="tt2">05h00min  </span>
+								<span class="tt2"><?php echo $curso->duracao ?>  </span>
 							</li>
 							<li>
 								<i class="ico aula"></i>
 								<span class="tt1">Total de Aulas</span>
-								<span class="tt2">27 aulas </span>
+								<span class="tt2"><?php echo $qtde_aula?> aulas </span>
 							</li>
 							
 							<li>
 								<i class="ico aula-ass"></i>
 								<span class="tt1">Aulas assistidas</span>
-								<span class="tt2">27 aulas </span>
+								<span class="tt2"><?php echo $qtde_assistida->qtde?> aulas </span>
 							</li>
 							
 							
