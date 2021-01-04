@@ -29,4 +29,13 @@ class Comentario extends Model
         return $this->db->lastInsertId();
 
     }
+
+    public function listaPorAula($id_aula)
+    {
+        $sql = "SELECT * FROM comentario WHERE id_aula = :id_aula";
+        $qry = $this->db->prepare($sql);
+        $qry->bindValue(":id_aula", $id_aula);
+        $qry->execute();
+        return $qry->fetchAll(\PDO::FETCH_OBJ); 
+    }
 }
