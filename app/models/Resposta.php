@@ -30,7 +30,7 @@ class Resposta extends Model
 
     public function listaPorComentario($id_comentario)
     {
-        $sql = "SELECT * FROM resposta WHERE id_comentario = :id_comentario";
+        $sql = "SELECT r.*, c.cliente FROM resposta r, cliente c WHERE c.id_cliente = c.id_cliente AND id_comentario = :id_comentario";
         $qry = $this->db->prepare($sql);
         $qry->bindValue(":id_aula", $id_comentario);
         $qry->execute();

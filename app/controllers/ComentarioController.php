@@ -18,9 +18,19 @@ class ComentarioController extends Controller{
    }
    
    public function index(){
+      $objComentario = new Comentario();
+      $dados["comentarios"] = $this->listarComentarios($this->id_cliente);
       $dados["view"] = "comentario/index";
+
       $this->load('template', $dados);
    } 
+
+   public function listarComentarios($id_aula)
+   {
+      $objComentario = new Comentario();
+      $comentarios = $objComentario->listaPorCliente($this->id_cliente);
+      return $objComentario->listarComentariosComResposta($comentarios);
+   }
 
    public function inserir()
    {

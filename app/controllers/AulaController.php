@@ -44,6 +44,8 @@ class AulaController extends Controller{
       $dados['aulas'] = $objAula_assistida->listaAulasAssistidas($aula->id_curso, $this->id_cliente);
       $dados['downloads'] = $objDownload->lista($aula->id_curso);
       $dados['comentarios'] = $this->listarComentarios($id_aula);
+      $dados["proximo"] = $objAula->getProximo($id_aula, $aula->id_curso);
+      $dados["anterior"] = $objAula->getAnterior($id_aula, $aula->id_curso);
 
       $dados['view'] = 'aula/index';
 
@@ -53,19 +55,10 @@ class AulaController extends Controller{
    public function listarComentarios($id_aula)
    {
       $objComentario = new Comentario();
-      $objResposta = new Resposta();
-      $lista = [];
+     
       $comentarios = $objComentario->listaPorAula($id_aula);
 
-      if($comentarios){
-         foreach($comentarios as $comentario){
-           $respostas = $objResposta->listaPorComentario($comentario->id_comentario);
-           $lista = (object) [
-            "comentario" => $comentario,
-            "resposta" => $respostas
-           ];  
-         }
-      }
-      return $lista;
+      return $objComentario->listarComentariosComResposta($comentarios);
    }
+
 }

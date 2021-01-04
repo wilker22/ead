@@ -11,8 +11,12 @@
 									<iframe src="https://www.youtube.com/embed/<?php echo $aula_atual->embed_youtube ?>" class="embed-item" width="655" height="360" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 								</div>
 								<div class="controles">
-									<a href="" class="btn anterior">Anterior</a>
-									<a href="" class="btn proximo">Próximo</a>  
+									<?php if($anterior) { ?>
+										<a href="<?php echo URL_BASE . "aula/assistir/" . $anterior->id_aula ?>" class="btn anterior">Anterior</a>
+									<?php } ?>
+									<?php if($proximo) { ?>
+										<a href="<?php echo URL_BASE . "aula/assistir/" . $proximo->id_aula ?>" class="btn proximo">Próximo</a>  
+									<?php } ?>
 								</div>
 							</div>
 						</div>
